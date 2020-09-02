@@ -1,0 +1,198 @@
+Javascript:
+
+Variables:
+------------
+A variable is an identifier used to refer some data.
+
+syntax: var var_name= value
+
+ex: var age=50;
+
+Environment setup:
+-------------------
+nodejs ex:
+var age=30;
+console.log(age+1)
+
+Types of variables:
+--------------------
+1) Local variable:
+    If we create a Local variable inside a function then it is Local variable. The scope of the variable is with in 
+    the function, hence it is not visible outside of the function.
+
+    Ex:
+            function f(){
+                var a=15;
+                console.log(a);
+            }
+            f();
+     
+2) Global variable:
+    If we create a variable outside of the function, then it is called as global variable
+
+Ex:
+            a = 10;
+            function f() {
+                console.log(a);
+            a = 20;
+            }
+            function f1() {
+                console.log(a);
+            a = 5;
+            }
+            f();
+            f1();
+            console.log(a);
+
+* Any function can modifies global variable
+
+Local Variable hoisting:
+----------------
+It is the process where all the variables in the function will be hosited(declared) first, 
+then control starts interpreting and executing the code.
+Ex:     
+function f2() {
+  var a = 100;
+  var b;
+  console.log(a);
+  console.log(b);
+  if (a > 1) {
+    var a = 90;
+    b = 100;
+    console.log(a);
+  }
+  console.log(a);
+}
+f2();
+
+Global Variable hoisting:
+-----------------------
+console.log(a);
+console.log(b);
+var a = 20;
+var b = 30;
+console.log(a);
+console.log(b);
+
+objects:
+--------
+var obj_name={key:value}=> key must be string, unique and values must be anytype. and they can be duplicated also.
+Ex:
+---
+var user = {
+  name: "tarun",
+  age: 23,
+  skills: ["python", "html", "css"],
+  address: {
+    dno: "10-13- 17/1",
+    location: "chirala",
+    landmark: "post office",
+  },
+};
+console.log(user.address);
+
+Operators:
+---------
+Javascript provides differrent Operators. An Operator is a symbol which is used to provide some functionality
+Arithematic operators:+-*/
+Assignment opertors:
+var a = 10;
+var b = 20;
+
+console.log(a++); // 10-> 10+1=11;
+console.log(++a); //1+11=10  
+console.log(a--); // 12-> a=11
+console.log(--a); // 11-1=10
+
+Control statements:
+--------------------
+1) Sequential : Top to bottom
+    if, if-else,
+    -------------
+    if(condition){
+        console.log(condition)
+    }
+    else{
+        condition.log(not condition)
+    }
+    -------------
+    switch:      When we have multiple options, choose one.
+            switch(choice){
+                case casevalue: //block of code 
+                case ..
+                .
+                .
+                .
+                default: //block of code
+            }
+Ex:
+var choice = 2;
+
+switch (choice) {
+  case "english":
+    console.log("happy new year");
+    break;
+  case 1:
+    console.log("welcome to javascript");
+    break;
+  case "telugu":
+    console.log("నూతన సంవత్సర శుభాకాంక్షలు");
+    break;
+  case "hindi":
+    console.log("नववर्ष की शुभकामना");
+    break;
+  case 2:
+    console.log("javascript is lightweight ");
+    break;
+  default:
+    console.log("wrong choice");
+}
+
+     
+2) Iterative statements
+    while, do-while, for
+
+var comments = [
+  {
+    name: "tarun",
+    comment: "chill",
+  },
+  {
+    name: "sai",
+    comment: "hot",
+  },
+  {
+    name: "vamsi",
+    comment: "attractive",
+  },
+  {
+    name: "subuhi",
+    comment: "jealous",
+  },
+];
+var index = 0;
+while (index < comments.length) {
+  console.log(comments[index].name + "    " + comments[index].comment);
+  index++;
+}
+------------------------------
+for :
+ex:)  var i = 0;
+      for (; i < 10; i++) {
+      console.log(i);
+      }
+
+
+3) Jump statements
+break,
+continue, :If we would like to skip an iteration, we use continue
+return 
+ex)
+function f1() {
+  if (10 == 10) {
+    console.log("inside");
+    return;
+  }
+  console.log("nextline");
+}
+f1();

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>switch control</title>
+  </head>
+  <body>
+    <form>
+      <select id="choice" onchange="displayGreetings()">
+        <option value="english">english</option>
+        <option value="తెలుగు">తెలుగు</option>
+        <option value="हिन्दी">हिन्दी</option>
+      </select>
+      <h1 id="message"></h1>
+    </form>
+    <script>
+      displayGreetings();
+      function displayGreetings() {
+        var choice = document.getElementById("choice").value;
+        var message = document.getElementById("message");
+        console.log("choice", choice);
+        switch (choice) {
+          case "english":
+            message.innerHTML = "Happy new year";
+            break;
+          case "తెలుగు":
+            message.innerHTML = "నూతన సంవత్సర శుభాకాంక్షలు";
+            break;
+          case "हिन्दी":
+            message.innerHTML = "नववर्ष की शुभकामना";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

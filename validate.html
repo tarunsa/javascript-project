@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>login form</title>
+  </head>
+  <body>
+    <form>
+      User name:<input type="text" id="username" /> Password:
+      <input type="password" id="password" />
+      <button onclick="validate()">Login</button>
+    </form>
+    <script>
+      function validate() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var result = username === "abc" && password === "abc" ? true : false;
+        if (result === true) {
+          alert("login sucessfull");
+        } else {
+          alert("login failed");
+        }
+      }
+    </script>
+  </body>
+</html>
